@@ -1,0 +1,21 @@
+<h3>New</h3>
+<%= form_tag("/create") do %>
+    <div class="form-group">
+        <%= label_tag "form-title","Title"%>
+        <%= text_field :memos, :title,id:"form-title",class:"form-control",placeholder:"Title"%>
+    </div>
+    <div class="form-group">    
+        <%= label_tag "form-review","Review"%>
+        <%= text_area :memos, :review,id:"form-review",class:"form-control",placeholder:"Review"%>
+    </div> 
+    <div class="form-group"> 
+        <%= label_tag "form-service","Service/Media"%>
+        <%=select_tag 'memos[service_id]',options_from_collection_for_select(@services,:id,:name),class:"form-control",id:"form-service"%>
+    </div>
+        <%=submit_tag "Create",class:"btn btn-danger"%>
+        
+        
+        
+    
+    
+<% end %>
